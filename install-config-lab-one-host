@@ -22,4 +22,4 @@ cat httpd.yml
       state: started
     become: yes
 
-ansible-playbook httpd.yml --extra-vars "ansible_sudo_pass=x"
+ansible-playbook httpd.yml --extra-vars "ansible_become_pass=x"
