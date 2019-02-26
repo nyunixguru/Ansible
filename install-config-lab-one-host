@@ -1,2 +1,25 @@
 sudo yum install epel-release
 sudo yum install ansible
+
+Add localhost to /etc/ansible/hosts
+Add user david to sudoers  david	ALL=(ALL) 	ALL
+
+ansible -m ping all --ask-pass
+
+cat httpd.yml
+---
+- name: This sets up an httpd webserver
+  hosts: localhost 
+  tasks:
+  - name: Install apache packages 
+    yum:
+      name: httpd
+      state: present
+    become: yes
+  - name: ensure httpd is running
+    service:
+      name: httpd 
+      state: started
+    become: yes
+
+ansible-playbook httpd.yml --extra-vars "ansible_sudo_pass=x"
