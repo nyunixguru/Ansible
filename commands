@@ -1,0 +1,3 @@
+ansible -m ping all --ask-pass
+
+ansible-playbook httpd.yml --ask-pass --extra-vars "ansible_become_pass=x"
