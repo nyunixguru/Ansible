@@ -6,20 +6,5 @@ Add user david to sudoers  david	ALL=(ALL) 	ALL
 
 ansible -m ping all --ask-pass
 
-cat httpd.yml
----
-- name: This sets up an httpd webserver
-  hosts: localhost
-  tasks:
-  - name: Install apache packages
-    yum:
-      name: httpd
-      state: present
-    become: yes
-  - name: ensure httpd is running
-    service:
-      name: httpd
-      state: started
-    become: yes
 ansible-playbook httpd.yml
 ansible-playbook httpd.yml --ask-pass --extra-vars "ansible_become_pass=x"
