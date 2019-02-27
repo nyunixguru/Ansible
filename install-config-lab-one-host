@@ -21,5 +21,5 @@ cat httpd.yml
       name: httpd
       state: started
     become: yes
-
+ansible-playbook httpd.yml
 ansible-playbook httpd.yml --ask-pass --extra-vars "ansible_become_pass=x"
