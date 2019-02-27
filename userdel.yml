@@ -1,0 +1,10 @@
+---
+- name: This deletes a user
+  hosts: localhost
+  tasks:
+  - name: Remove the user 'johnd'
+    user:
+       name: johnd
+       state: absent
+       remove: yes
+    become: yes
