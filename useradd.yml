@@ -1,0 +1,11 @@
+---
+- name: This sets up a new user
+  hosts: localhost
+  tasks:
+  - name: Add the user 'johnd' with a specific uid and a primary group of 'admin'
+    user:
+       name: johnd
+       comment: John Doe
+       uid: 1040
+       group: nobody
+    become: yes
