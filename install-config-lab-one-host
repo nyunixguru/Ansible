@@ -4,6 +4,9 @@ sudo yum install ansible
 Add localhost ansible_connection=local to /etc/ansible/hosts
 Add user david to sudoers david ALL = (ALL) NOPASSWD: ALL
 
+#hosts entry
+localhost ansible_connection=local ansible_sudo_pass=x
+
 ansible -m ping all
 
 ansible-playbook httpd.yml

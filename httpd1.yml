@@ -1,0 +1,10 @@
+---
+- name: This playbook sets up an httpd webserver
+  hosts: localhost
+  tasks:
+  - name: Install apache packages
+    yum: name=httpd state=present
+    become: yes
+  - name: ensure httpd is running
+    service: name=httpd state=started
+    become: yes
