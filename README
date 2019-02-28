@@ -1,2 +1,2 @@
 An all inclusive Lab bundle for running and testing ansible playbooks and roles on one Lab host
-Download into home directory
+Download into home directory subdirectory ansible and run playbooks from there
