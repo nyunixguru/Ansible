@@ -1,5 +1,6 @@
 ansible -m ping all --ask-pass
 
+ansible-doc yum
 ansible-playbook httpd.yml --ask-pass --extra-vars "ansible_become_pass=x"
 ansible-playbook useradd.yml --ask-pass --extra-vars "ansible_become_pass=x"
 ansible-playbook httpd.yml --extra-vars "ansible_sudo_pass=x"

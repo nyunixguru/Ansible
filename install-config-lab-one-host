@@ -1,13 +1,12 @@
 sudo yum install epel-release
 sudo yum install ansible
 
-Add localhost ansible_connection=local to /etc/ansible/hosts
-Add user david to sudoers david ALL = (ALL) NOPASSWD: ALL
+Add localhost ansible_connection=local to ~/ansible/hosts
+Add user david to /etc/sudoers -- david ALL = (ALL) NOPASSWD: ALL
 
 #hosts entry
 localhost ansible_connection=local ansible_sudo_pass=x
 
-ansible -m ping all
-
+Run playbooks
 ansible-playbook httpd.yml
 ansible-playbook httpd.yml --ask-pass --extra-vars "ansible_become_pass=x"
