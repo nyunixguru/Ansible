@@ -1,0 +1,5 @@
+---
+# tasks file for /home/david/ansible/roles/apache
+- name: Install apache packages
+  yum: name={{webserver}} state=present
+  become: yes

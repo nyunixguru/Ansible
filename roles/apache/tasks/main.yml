@@ -1,8 +1,10 @@
 ---
 # tasks file for /home/david/ansible/roles/apache
-- name: Install apache packages
-  yum: name={{webserver}} state=present
-  become: yes
-- name: ensure httpd is running
-  service: name=httpd state=started
-  become: yes
+- import_tasks: install_apache.yml
+- import_tasks: start_apache.yml
+#- name: Install apache packages
+#  yum: name={{webserver}} state=present
+#  become: yes
+#- name: ensure httpd is running
+#  service: name=httpd state=started
+#  become: yes

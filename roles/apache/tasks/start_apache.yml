@@ -1,0 +1,5 @@
+---
+# tasks file for /home/david/ansible/roles/apache
+- name: ensure httpd is running
+  service: name=httpd state=started
+  become: yes
