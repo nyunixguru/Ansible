@@ -10,3 +10,6 @@ localhost ansible_connection=local ansible_sudo_pass=x
 Run playbooks
 ansible-playbook httpd.yml
 ansible-playbook httpd.yml --ask-pass --extra-vars "ansible_become_pass=x"
+
+Create roles
+ansible-galaxy init /home/david/ansible/roles/apache --offline
