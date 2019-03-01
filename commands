@@ -1,5 +1,7 @@
 ansible -m ping all --ask-pass
 ansible-doc yum
+ansible all -m setup
+ansible all -m service -a "name=httpd state=stopped"
 
 Run ansible playbooks
 ansible-playbook httpd.yml --ask-pass --extra-vars "ansible_become_pass=x"
@@ -7,4 +9,4 @@ ansible-playbook useradd.yml --ask-pass --extra-vars "ansible_become_pass=x"
 ansible-playbook httpd.yml --extra-vars "ansible_sudo_pass=x"
 
 Ansible roles
-ansible-galaxy init /tmp/apache --offline
+ansible-galaxy init /home/david/ansible/roles/apache --offline
