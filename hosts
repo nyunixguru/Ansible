@@ -39,3 +39,4 @@
 ## db-[99:101]-node.example.com
 
 localhost ansible_connection=local ansible_sudo_pass=x
+kubernetes

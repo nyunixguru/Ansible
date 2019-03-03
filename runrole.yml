@@ -1,5 +1,5 @@
 ---
 # file to run apache role #ansible-playbook runrole.yml
- - hosts: localhost
+ - hosts: localhost, kubernetes
    roles:
    - apache
