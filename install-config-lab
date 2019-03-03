@@ -18,5 +18,5 @@ Run playbooks
 ansible-playbook httpd.yml
 ansible-playbook httpd.yml --ask-pass --extra-vars "ansible_become_pass=x"
 
-Create roles
+Create skeleton structure for roles
 ansible-galaxy init /home/david/ansible/roles/apache --offline

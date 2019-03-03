@@ -1,0 +1,8 @@
+---
+- name: test
+  copy:
+    src: /etc/hosts
+    dest: /tmp/hosts
+    owner: foo
+    group: foo
+    mode: 0644
