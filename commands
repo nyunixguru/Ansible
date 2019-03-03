@@ -7,6 +7,7 @@ Run ansible playbooks
 ansible-playbook httpd.yml --ask-pass --extra-vars "ansible_become_pass=x"
 ansible-playbook useradd.yml --ask-pass --extra-vars "ansible_become_pass=x"
 ansible-playbook httpd.yml --extra-vars "ansible_sudo_pass=x"
+ansible-playbook runrole.yml
 
 Ansible roles
 ansible-galaxy init /home/david/ansible/roles/apache --offline

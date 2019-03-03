@@ -1,17 +1,18 @@
+Install ansible on control host
 sudo yum install epel-release
 sudo yum install ansible
 
 inventory file entries
 Add localhost ansible_connection=local to ~/ansible/hosts
 Add kubernetes to ~/ansible/hosts
+#hosts entry for sudo
+localhost ansible_connection=local ansible_sudo_pass=x
 
 Add user david to /etc/sudoers -- david ALL = (ALL) NOPASSWD: ALL on
 local and remote hosts
 
-#hosts entry for sudo
-localhost ansible_connection=local ansible_sudo_pass=x
-
-Setup passwordless ssh
+Setup passwordless ssh with ssh-keygen and ssh-copy-id
+add sudo entry on remote host
 
 Run playbooks
 ansible-playbook httpd.yml
