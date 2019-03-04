@@ -1,8 +1,10 @@
 ---
 - name: test
-  copy:
-    src: /etc/hosts
-    dest: /tmp/hosts
-    owner: foo
-    group: foo
-    mode: 0644
+  hosts: kubernetes
+  tasks:
+  - copy:
+     src: /etc/hosts
+     dest: /tmp/hosts
+     owner: david
+     group: david
+     mode: 0644
