@@ -1,5 +1,6 @@
 Install ansible on control host
 sudo yum install epel-release
+yum replolist -v #to check
 sudo yum install ansible
 
 inventory file entries
