@@ -9,11 +9,12 @@ Add kubernetes to ~/ansible/hosts
 #hosts entry for sudo
 localhost ansible_connection=local ansible_sudo_pass=x
 
-Add user david to /etc/sudoers -- david ALL = (ALL) NOPASSWD: ALL on
+Add user ansadmin passwd ansadmin
+Add ansadmin to /etc/sudoers -- david ALL = (ALL) NOPASSWD: ALL on
 local and remote hosts
 
 Setup passwordless ssh with ssh-keygen and ssh-copy-id
-add sudo entry on remote host
+on Control node as ansadmin run ssh-keygen
 
 Run playbooks
 ansible-playbook httpd.yml
