@@ -1,7 +1,18 @@
+Add hoc commands
+"sony" is the managed node
+
 ansible -m ping all --ask-pass
 ansible-doc yum
 ansible all -m setup
 ansible all -m service -a "name=httpd state=stopped"
+
+ansible sony -a "uname -a" 
+ansible sony -m copy -a "src=/etc/hosts dest=/tmp/hosts"
+
+#Become root with -b  for some commands
+ansible sony -m yum -a "name=zsh state=present" -b
+ansible sony -m user -a "name=foo state=absent" -b
+
 
 Run ansible playbooks
 ansible-playbook httpd.yml --ask-pass --extra-vars "ansible_become_pass=x"
