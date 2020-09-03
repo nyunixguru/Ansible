@@ -14,7 +14,47 @@ Add ansadmin to /etc/sudoers -- david ALL = (ALL) NOPASSWD: ALL on
 local and remote hosts
 
 Setup passwordless ssh with ssh-keygen and ssh-copy-id
-on Control node as ansadmin run ssh-keygen
+on Control node as ansadmin run ssh-keygen[ansadmin@ansible ~]$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/ansadmin/.ssh/id_rsa): 
+Created directory '/home/ansadmin/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/ansadmin/.ssh/id_rsa.
+Your public key has been saved in /home/ansadmin/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:mPb5EbRrZqjRtlglkd/xJHqGcdsgnwSK+MolckZIKgQ ansadmin@ansible
+The key's randomart image is:
++---[RSA 2048]----+
+|E..       .      |
+|.o . . . o .     |
+|o . o . + + * .  |
+|.  . . o + @ X   |
+|  . + * S B B o  |
+|   = = o = =     |
+|    o . B *      |
+|       * * .     |
+|      o . .      |
++----[SHA256]-----+
+
+[ansadmin@ansible ~]$ ssh-copy-id sony
+/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ansadmin/.ssh/id_rsa.pub"
+The authenticity of host 'sony (192.168.64.130)' can't be established.
+ECDSA key fingerprint is SHA256:5bPfOkKxBQw6NHRTEmfxhcgGVQJG+06E17/wz1kuNp8.
+ECDSA key fingerprint is MD5:32:fe:cd:17:e1:b1:10:ea:35:8b:16:cd:57:8b:32:3d.
+Are you sure you want to continue connecting (yes/no)? yes
+/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+ansadmin@sony's password: 
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh 'sony'"
+and check to make sure that only the key(s) you wanted were added.
+
+ansible sony -m ping
+ansible -m setup sony
+
 
 Run playbooks
 ansible-playbook httpd.yml
