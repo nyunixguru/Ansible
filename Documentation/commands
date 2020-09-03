@@ -13,6 +13,10 @@ ansible sony -m copy -a "src=/etc/hosts dest=/tmp/hosts"
 ansible sony -m yum -a "name=zsh state=present" -b
 ansible sony -m user -a "name=foo state=absent" -b
 
+ansible sony -m service -a "name=httpd state=started" -b
+ansible sony -m service -a "name=httpd state=stopped" -b
+
+
 
 Run ansible playbooks
 ansible-playbook httpd.yml --ask-pass --extra-vars "ansible_become_pass=x"
